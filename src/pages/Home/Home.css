@@ -1,0 +1,238 @@
+/* 🟢 Carrousel */
+/* 🟢 Carrousel Responsive */
+.carousel {
+    position: relative;
+    width: 100%;  /* Largeur ajustée pour s'adapter aux écrans */
+    max-width: 1200px; /* Largeur maximale pour éviter qu'il devienne trop grand */
+    height: auto;  /* Hauteur automatique */
+    margin: 150px auto 20px auto; /* Ajustement de l'espacement */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* 🔹 Conteneur interne */
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+/* 🔹 Chaque slide */
+.carousel-item {
+    min-width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🔹 Ajustement des images */
+.carousel img {
+    width: 100%;   /* Prend toute la largeur */
+    height: auto;  /* Hauteur auto pour éviter la déformation */
+    max-height: 500px; /* Hauteur max pour garder une bonne proportion */
+    object-fit: contain; /* Empêche le recadrage des images */
+    border-radius: 10px;
+}
+
+/* 🟢 RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    .carousel {
+        width: 100%; /* Utilise toute la largeur sur mobile */
+    }
+
+    .carousel img {
+        max-height: 300px; /* Réduit la hauteur des images sur mobile */
+    }
+}
+     .h1ticket{
+         text-align:center;
+         color:purple ;
+         background-color: #75f3f3;
+         border-radius: 25px;
+           
+
+     }          
+/* Conteneur des tickets */
+/* 🔹 Conteneur des tickets */
+.ticket-container {
+    display: flex;
+    justify-content: center; /* Centre les tickets horizontalement */
+    gap: 30px; /* Espace entre les tickets */
+    flex-wrap: nowrap; /* Empêche le passage à la ligne */
+    margin-top: 50px; /* Espace avec le header */
+    background-image: url(5.png);
+    background-size: cover;
+   
+}
+
+/* 🔹 Style des tickets */
+.ticket {
+    border: 2px solid rgb(13, 13, 14);
+    width: 450px; /* Ajustement de la taille */
+    height: 450px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* ✅ Centre tout le contenu verticalement */
+    font-weight: bold;
+    background-color:transparent;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px; /* Ajuste cet espace selon tes besoins */
+   
+}
+
+/* 🔹 Ajustement des titres des tickets */
+.ticket h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 35px; /* Réduction de l’espace en bas */
+}
+
+/* 🔹 Ajustement des icônes */
+.ticket h2 img {
+    width: 40px;
+    height: auto;
+}
+
+/* 🔹 Style des listes */
+.ticket ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.ticket ul li {
+    margin: 10px 0;
+}
+
+.ticket ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    background-color: #e7b6d0;
+   padding: 10px 20px;
+    border-radius: 8px;
+    display: block;
+    transition: background 0.3s ease-in-out;
+}
+
+.ticket ul li a:hover {
+    background-color: #d52c87;
+    color: white;
+}
+
+/* 📱 Responsive : Passage en colonne sur petits écrans */
+@media screen and (max-width: 900px) {
+    .ticket-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
+.h2ticket{
+    text-align:center;
+    color:purple ;
+  
+    border-radius: 25px;
+
+
+}
+.pticket{
+
+
+   
+    width: 60%;
+    /* repartir les marges agauche et a droite */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    text-align: justify;
+}
+.ticket22{
+
+   margin-top: 60px;
+       background-image: url(6.png);
+       background-size: cover;
+}
+
+.ticket-container2 {
+    display: flex;
+    justify-content: center; /* Centre les tickets */
+    gap: 30px; /* Espace entre les tickets */
+    flex-wrap: wrap; /* Permet le passage à la ligne */
+    margin-top: 50px;
+}
+.ticket2 {
+    border: 2px solid rgb(13, 13, 14);
+    width: 500px; /* Ajustement de la taille */
+    height: 300px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* ✅ Centre tout le contenu verticalement */
+    font-weight: bold;
+    background-color:transparent;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px; /* Ajuste cet espace selon tes besoins */
+}
+
+/* 🟢 Responsive : 1 ticket par ligne sur mobile */
+@media screen and (max-width: 768px) {
+    .ticket2 {
+        width: 100%;
+    }
+}
+.ticket2 h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #03a8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+   
+}
+
+.ticket2 h2 img {
+    width: 60px;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .ticket2 {
+        width: 90%;
+    }
+}
+.ticket2 p {
+    margin-bottom: 45px; /* Ajuste cette valeur selon l'espace désiré */
+}
+.ticket2 button{
+
+    background-color: #03a8e8;
+    height: 50px;
+    width: 280px;
+    border-radius: 50px;
+    font-size: 18px;
+    color:white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 15px; /* Ajuste la valeur selon l'espace souhaité */
+    margin-bottom:- 35px; /
+}
+.ticket2 button:hover{
+    background-color: #d52c87;
+    color: black;
+}

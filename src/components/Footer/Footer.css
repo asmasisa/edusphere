@@ -1,0 +1,101 @@
+.footerclass {
+    background-color: #535556; /* Couleur de fond */
+    padding: 30px 5%; /* Espace intérieur */
+    display: flex;
+    justify-content: space-between; /* Espacement entre les colonnes */
+    flex-wrap: wrap; /* Permet le retour à la ligne si l’écran est petit */
+    align-items: start; /* Alignement en haut */
+    margin-top: 50px;
+}
+
+.footerclass img {
+    width: 200px; /* Ajuste la taille du logo */
+    height: 200px;
+}
+
+.footerclass ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 20%; /* Taille de chaque colonne */
+    min-width: 150px; /* Taille minimale pour éviter le chevauchement */
+}
+
+.footerclass h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.footerclass ul li {
+    margin-bottom: 8px;
+}
+
+.footerclass ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+  
+    padding: 8px 12px;
+ 
+    display: block;
+   
+}
+
+.footerclass ul li a:hover {
+    background-color: #d595b5; /* Effet hover */
+}
+@media (max-width: 768px) {
+    .footerclass {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footerclass ul {
+        width: 100%; /* Chaque UL prend toute la largeur */
+        margin-bottom: 20px; /* Espacement entre les blocs */
+    }
+}
+
+.footerclassdiv{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+   
+}
+.footerclassdiv h3{
+    text-align: center;
+    margin-bottom: 35px;
+}
+.footerclassdiv p{
+    text-align: center;
+    color: #f9f8f8;
+    margin-bottom: 5px;
+}
+.footerclassdiv ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    gap: 20px; /* Espacement entre les éléments */
+    margin-bottom: 10px;
+}
+
+  .footerclassdiv  ul li {
+    display: flex;
+    align-items: center; /* Centre l'image et le texte verticalement */
+}
+
+ .footerclassdiv  ul li a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 3px 4px;
+    font-size: 16px;
+    color: black;
+}
+
+.footerclassdiv ul li a img {
+    width: 60px; /* Ajuste la taille des images */
+    height: auto;
+    border-radius: 60px; /* Facultatif : arrondi les coins */
+}

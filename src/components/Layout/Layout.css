@@ -1,0 +1,9 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Prend toute la hauteur de la page */
+}
+
+main {
+    flex: 1; /* Permet au contenu principal de prendre l'espace disponible */
+}
