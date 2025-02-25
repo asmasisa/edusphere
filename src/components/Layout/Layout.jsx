@@ -1,16 +1,17 @@
 import React from 'react';
-import Nav from '../Nav/Nav';
-import Footer from '../Footer/Footer';
-
+import Nav from '../Nav/Nav';  // Assure-toi d'importer correctement
+import Footer from '../Footer/Footer';  // Assure-toi d'importer correctement
 
 const Layout = ({ children }) => {
     return (
-        <div>
-            <Nav />                 {/* Barre de navigation */}
-            <main>{children}</main> {/* Contenu spécifique à chaque page */}
-            <Footer />              {/* Pied de page */}
-        </div>
+        <>
+            <Nav />
+            <main>{children}</main>
+            <Footer />
+           
+        </>
     );
 };
 
 export default Layout;
+

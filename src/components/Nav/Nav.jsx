@@ -1,34 +1,84 @@
-import React from 'react';
-import './Nav.css';
+import React, { useState, useEffect } from "react";
+import "./Nav.css"; // Importation du CSS
+import { FaUser, FaSignInAlt, FaSearch, FaBars } from "react-icons/fa"; // Ajout de FaSearch et FaBars
 
 const Nav = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [searchVisible, setSearchVisible] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+            if (window.innerWidth > 768) {
+                setSearchVisible(true);
+            } else {
+                setSearchVisible(false);
+            }
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     return (
         <nav>
             <div className="nav-top">
                 <img className="logo" src="/images/logop.png" alt="Logo" />
-                <div className="search-info">
-                    <form action="search_info">
-                        <input type="text" placeholder="Rechercher..." name="search" />
-                        <button>🔍</button>
-                    </form>
-                </div>
+
+                {/* 🔍 Loupe en mode mobile */}
+                {isMobile && (
+                    <button
+                        type="button"
+                        className="search-icon"
+                        onClick={() => setSearchVisible(!searchVisible)}
+                    >
+                        <FaSearch />
+                    </button>
+                )}
+<div className={`search-info ${searchVisible ? "active" : ""}`}>
+    <form>
+        <input type="text" placeholder="Rechercher..." />
+        <button type="submit" className="search-btn">
+            <FaSearch />
+        </button>
+    </form>
+</div>
+
+                {/* Boutons login */}
                 <div className="login">
-                    <button>Se connecter</button>
-                    <button>S'inscrire</button>
+                    {isMobile ? (
+                        <>
+                            <button><FaUser className="icon" /></button>
+                            <button><FaSignInAlt className="icon" /></button>
+                        </>
+                    ) : (
+                        <>
+                            <button><FaUser className="icon" /> <span>Se connecter</span></button>
+                            <button><FaSignInAlt className="icon" /> <span>S'inscrire</span></button>
+                        </>
+                    )}
                 </div>
             </div>
-            <button className="menu-toggle nav-button">☰</button>
-            <ul className="nav-links">
-                <li><a className="active" href="#home">homepage</a></li>
-                <li><a href="#niveaux" className="smooth-scroll">Les niveaux</a></li>
-                <li><a href="#library" className="smooth-scroll">Our Learning Library</a></li>
-                <li><a className="active" href="#cnt">contact</a></li>
-                <li><a className="active" href="#home">الابتدائي</a></li>
-                <li><a href="#about">المتوسط</a></li>
-                <li><a href="#contact">الثانوي</a></li>
+
+            {/* 🍔 Menu Burger */}
+            <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+                <FaBars />
+            </button>
+
+            {/* 📌 Liens du menu */}
+            <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+                <li><a href="#home">Homepage</a></li>
+                <li><a href="#niveaux">Les niveaux</a></li>
+                <li><a href="#library">Our Learning Library</a></li>
+                <li><a href="#cnt">Contact</a></li>
+                <li><a href="#home">التعليم الابتدائي   </a></li>
+                <li><a href="#home">التعليم المتوسط    </a></li>
+                <li><a href="#contact">  التعليم الثانوي  </a></li>
             </ul>
         </nav>
     );
 };
 
-export default Nav; // ✅ Assure-toi que c'est bien présent !
+export default Nav;
+

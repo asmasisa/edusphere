@@ -1,6 +1,12 @@
+/* 🔹 Réinitialisation des styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-
-/* 🔵 Navigation */
+/* 🔵 Barre de navigation */
 nav {
     display: flex;
     flex-direction: column;
@@ -16,37 +22,39 @@ nav {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* 🔹 Conteneur du haut (logo, recherche, boutons) */
+/* 🔹 Conteneur principal */
 .nav-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     padding: 10px;
-    height: 80px;
+    height: 90px;
 }
 
-/* 🔹 Logo */
+/* 🔹 Logo plus grand */
 .logo {
-    height: 100px;
+    height: 120px;
     width: auto;
+    margin-left: 40px;
 }
 
-/* 🔹 Barre de recherche */
+/* 🔹 Barre de recherche centrée */
 .search-info {
     flex-grow: 1;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .search-info form {
     border: 2px solid black;
     border-radius: 50px;
     padding: 5px;
+    background: white;
+    width: 350px; /* Plus grande */
     display: flex;
     align-items: center;
-    background: white;
-    width: 90%;
 }
 
 .search-info input {
@@ -59,32 +67,64 @@ nav {
 }
 
 .search-info button {
-    padding: 12px;
+    background: none;
     border: none;
-    background: white;
     cursor: pointer;
-    border-radius: 50px;
+    font-size: 20px;
+    padding: 10px;
 }
 
-/* 🔹 Boutons de connexion */
+/* 🔹 Boutons de connexion rapprochés */
 .login {
     display: flex;
     gap: 10px;
 }
 
 .login button {
-    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 16px;
+    background: none;
     border: none;
-    background-color: #03a8e8;
-    color: white;
     cursor: pointer;
-    border-radius: 50px;
-    font-size: 14px;
-    transition: background 0.3s;
+    transition: 0.3s;
+    background-color: #75f3f3;
+    border-radius: 25px;
 }
 
 .login button:hover {
-    background-color: #e7b6d0;
+    background-color: palevioletred;
+}
+
+.login .icon {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+/* 🔹 Mode mobile : cacher le texte */
+@media screen and (max-width: 768px) {
+    .login button span {
+        display: none;
+    }
+
+    .login button {
+        padding: 10px;
+    }
+
+    .login .icon {
+        font-size: 24px; /* Agrandir les icônes */
+    }
+}
+
+/* 🔹 Bouton loupe (mobile) */
+.search-icon {
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: none; /* Masqué sur grand écran */
 }
 
 /* 🔹 Menu principal */
@@ -132,25 +172,62 @@ nav {
 
     .menu-toggle {
         display: block;
+        position: absolute;
+        top: 50px; /* Ajuste la position verticale (plus il est bas, plus la valeur augmente) */
+        left: 10px; /* Positionne bien à gauche */
+        font-size: 28px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: black;
+        z-index: 1100; /* Assure qu'il est au-dessus des autres éléments */
     }
+    
 
+    /* 📌 Masquer le menu par défaut */
     .nav-links {
         display: none;
         flex-direction: column;
-        background-color: #75f3f3;
+        background-color: #ffffff;
         position: absolute;
         top: 100%;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    .nav-links li {
-        padding: 10px;
+        left: 0; /* Place le menu complètement à gauche */
+        width: 60%; /* Ajuste la largeur pour bien occuper l'espace */
+        height: 300%;
+        text-align: left; /* Aligner le texte à gauche */
+        padding: 15px 30px; /* Ajoute un padding pour ne pas coller aux bords */
+        transition: all 0.3s ease-in-out;
+        border-radius: 20px; /* Ajoute un léger arrondi */
+        border: 1px solid black;
+        font-size: 25px;
     }
 
     .nav-links.active {
         display: flex;
     }
+
+    /* 🔍 Barre de recherche cachée */
+    .search-info {
+        display: none;
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+
+    .search-info.active {
+        display: flex;
+    }
+
+    /* Afficher la loupe */
+    .search-icon {
+        display: block;
+    }
 }
+
+

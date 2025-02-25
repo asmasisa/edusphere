@@ -61,15 +61,16 @@
     gap: 30px; /* Espace entre les tickets */
     flex-wrap: nowrap; /* Empêche le passage à la ligne */
     margin-top: 50px; /* Espace avec le header */
-    background-image: url(5.png);
+   
     background-size: cover;
+   
    
 }
 
 /* 🔹 Style des tickets */
 .ticket {
     border: 2px solid rgb(13, 13, 14);
-    width: 450px; /* Ajustement de la taille */
+    width: 400px; /* Ajustement de la taille */
     height: 450px;
     border-radius: 12px;
     display: flex;
@@ -161,7 +162,7 @@
 .ticket22{
 
    margin-top: 60px;
-       background-image: url(6.png);
+      
        background-size: cover;
 }
 
@@ -230,7 +231,7 @@
     font-weight: bold;
     cursor: pointer;
     margin-bottom: 15px; /* Ajuste la valeur selon l'espace souhaité */
-    margin-bottom:- 35px; /
+    margin-bottom:- 35px; 
 }
 .ticket2 button:hover{
     background-color: #d52c87;
